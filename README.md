@@ -3,8 +3,10 @@
 
 En la carpeta routes/adn.js se encuentran las rutas que se utilizaran tanto como para validar el adn y subirlo a una base de datos de mongo, como para llamar la ruta get para traer los starts las rutas para llamar todo eso desde el servidor de heroku es: 
 // Url valida con un adn que no está mutado
+
 https://teamknowlogy-prueba.herokuapp.com/mutation
 
+#body 
 {
 "adn":["TTTTAA","TACTGC","TAGTGT","CGAAGG","CCCTTA","TCACAG"]
 }
@@ -19,7 +21,7 @@ Respuesta
 
 // Url valida con un adn que está mutado
 https://teamknowlogy-prueba.herokuapp.com/mutation
-
+#body 
 {
 "adn":["TTTTAA","TACTGC","TAGTGT","CGAAGG","CCCATA","TCACAG"]
 }
@@ -48,7 +50,7 @@ https://teamknowlogy-prueba.herokuapp.com/stats
     "ratio": 1
 }
 
-body invalido 
+·body invalido 
 {
 "adn":["TTTTAA","TACTGC","TAGTGT","CGAAGG","CCCATX","TCACAX"]
 }
