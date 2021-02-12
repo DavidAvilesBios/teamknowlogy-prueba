@@ -6,7 +6,7 @@ En la carpeta routes/adn.js se encuentran las rutas que se utilizaran tanto como
 
 https://teamknowlogy-prueba.herokuapp.com/mutation
 
-#body 
+# body 
 {
 "adn":["TTTTAA","TACTGC","TAGTGT","CGAAGG","CCCTTA","TCACAG"]
 }
@@ -21,7 +21,7 @@ Respuesta
 
 // Url valida con un adn que está mutado
 https://teamknowlogy-prueba.herokuapp.com/mutation
-#body 
+# body 
 {
 "adn":["TTTTAA","TACTGC","TAGTGT","CGAAGG","CCCATA","TCACAG"]
 }
@@ -50,7 +50,7 @@ https://teamknowlogy-prueba.herokuapp.com/stats
     "ratio": 1
 }
 
-·body invalido 
+# body invalido 
 {
 "adn":["TTTTAA","TACTGC","TAGTGT","CGAAGG","CCCATX","TCACAX"]
 }
