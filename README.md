@@ -62,11 +62,12 @@ respuesta
     "err": "Formato de datos no valido"
 }
 
-
+# Carpeta de metodos
 En la carpeta Metodos/metodosMutaciones
 
 Se encuentran todas las funciones utilizadas para hacer todas las validaciones necesarias para ver si el adn esta mutado o no, tales como también las validaciones del body que se encuentren incorrectas. la explicación de cada metodo se encuentra en los metodos y en el archivo.
 
+# Ejecución en local
 
 Para correr el metodo local es muy sencillo, debido a que se solamente se necesita descargar este repositorio y utilizar el comando npm i para descargas todos los modules de node necesarios para la utilización de este proyecto. La base de datos de este proyecto se encuentra en cloud así que no sería necesaria instalar nada para utilizar este proyecto.
 
@@ -75,5 +76,8 @@ Para inicializarlo solamente es requerido correr el comando npm start y tener la
 localhost:3000/stats //metodo get
 
 localhost:3000/mutation //metodo post es necesario mandar un body
+body
+{
+"adn":["TTTTAA","TACTGC","TAGTGT","CGAAGG","CCCATA","TCACAG"]
+}
 
-https://teamknowlogy-prueba.herokuapp.com/mutation
