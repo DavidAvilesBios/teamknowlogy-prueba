@@ -9,7 +9,10 @@ let {
 } = require('../metodos/metodoMutaciones');
 let Adn = require('../models/adn');
 
-
+//aquí se agrega la ruta para ver si un adn tiene mutación o no
+// cuenta con las validaciones correspondientes, de que en el body de la petición venga el adn
+// y que tenga la estructura correspondiente, también se agregan los modelos para subir la respuesta en dado caso de tener mutación o no
+// se subirá a un repositorio online de base de datos de mongo(MongoAtlas)
 app.post('/mutation', (req, res) => {
     let body = req.body;
     if (body.adn) {
@@ -92,7 +95,7 @@ app.post('/mutation', (req, res) => {
 
 });
 
-
+//Está es la ruta para verificar los total de adn mutados y los no mutados que se encuentran en la base de datos
 app.get('/stats', async (req, res) => {
 
     const mutados = await Adn.countDocuments({

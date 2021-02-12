@@ -1,4 +1,9 @@
 let contadorMutacionesEncontradas = 0
+//Este es el metodo que determina si el arreglo está mutado o no,
+// lo primero que se hace es validar de forma horizontal la matrix, en este caso es validar como viene normalmente el arreglo para ver si tiene mutaciones
+// lo segundo es con un contador es ir contando las letras que va encontrando, si viene la misma letra consecutiva 4 veces, va y suma 1 al contador de mutaciones
+// si el contador de mutaciones llega a 2, entonces tira break y convierte la variable mutatation en true, señal de que encontro 2 mutaciones en el adn y no se recorre el arreglo
+// de forma vertical, ni diagonal, retorna un true, en dado caso contrario va a recorrer el metodo readVerticalMatrix y diagonalup en busca de mutaciones.
 function hasMutation(array) {
     let matrix = [];
     let letra = '';
@@ -41,7 +46,9 @@ function hasMutation(array) {
     return mutation;
 }
 
-
+/*  este metodo lo que hace es recorrer la matrix de forma vertical en busca de mutaciones, en dado caso de encontrarlas
+hace lo mismo que el anterior metodo, alimenta un contador con las letras que va encontrando y si encuentra 4 letras iguales de forma consecutiva, alimenta
+la variable contador de mutaciones encontradas, hasta que este contador de un total de 2, es cuando el arreglo tiene mutaciones.*/
 function readVerticalMatrix(matrix) {
     mutation = false;
     for (let i = 0; i < matrix.length; i++) {
@@ -72,7 +79,8 @@ function readVerticalMatrix(matrix) {
     return mutation;
 
 }
-
+/* este metodo se encarga de encontrar de forma diagonal ya sea de arriba hacia abajo o de abajo hacia arriba
+combinaciones de letras mayores a 4 para que puedan ser examinadas para encontrar permutaciones.*/
 function diagonal(array, bottomToTop) {
     var Ylength = array.length;
     var Xlength = array[0].length;
@@ -94,6 +102,9 @@ function diagonal(array, bottomToTop) {
     return returnArray.filter((e) => e.length > 3);
 }
 
+/*  este metodo lo que hace es recorrer la matrix de forma diagonal en busca de mutaciones, en dado caso de encontrarlas
+hace lo mismo que el anterior metodo, alimenta un contador con las letras que va encontrando y si encuentra 4 letras iguales de forma consecutiva, alimenta
+la variable contador de mutaciones encontradas, hasta que este contador de un total de 2, es cuando el arreglo tiene mutaciones.*/
 function diagonalUp(array) {
     mutation = false;
     for (let secuencia of array) {
@@ -121,7 +132,8 @@ function diagonalUp(array) {
     }
     return mutation;
 }
-
+//este metodo concatena el arreglo dado con las combinaciones de letras para crear un string con todas las combinaciones
+// y así guardar el string en la base de datos en mongo
 function contenarAdn(array) {
     let adn = "";
     for (let registro of array) {
@@ -130,6 +142,9 @@ function contenarAdn(array) {
 
     return adn;
 }
+
+//Este metodo valida si la estructura de las cadenas vienen iguales, en dado de que una cadena no tenga la misma estructura que las demas
+// no dejará entrar a validar el adn
 
 const isValidMatrix = (matrix) => {
 
@@ -149,10 +164,9 @@ const isValidMatrix = (matrix) => {
     return true;
 
 }
-
+//Este metodo valida si la estructura de las cadenas tienen las letras requeridas, en dado caso de no tener las estructuras correctas,
+//no entrará a validar el adn
 const isTypoValid = (array) => {
-
-    //const validTypo = ["A","T","C","G"];
 
     for (let char of array) {
 
