@@ -22,7 +22,7 @@ app.post('/mutation', (req, res) => {
                         mutado: true
                     });
 
-                    /*adn.save((err, adnDB) => {
+                    adn.save((err, adnDB) => {
                         if (err) {
                             return res.status(500).json({
                                 ok: false,
@@ -42,11 +42,6 @@ app.post('/mutation', (req, res) => {
                             adn: adnDB,
                             notificacion: 'Se agrego correcto'
                         });
-                    });*/
-                    res.status(200).json({
-                        ok: respuesta,
-                        //adn: adnDB,
-                        notificacion: 'Se agrego correcto'
                     });
                 } else {
 
@@ -55,7 +50,7 @@ app.post('/mutation', (req, res) => {
                         mutado: false
                     });
 
-                   /* adn.save((err, adnDB) => {
+                    adn.save((err, adnDB) => {
                         if (err) {
                             return res.status(500).json({
                                 ok: false,
@@ -74,11 +69,6 @@ app.post('/mutation', (req, res) => {
                             ok: respuesta,
                             err: 'el adn no está mutado'
                         });
-                    });*/
-                    res.status(200).json({
-                        ok: respuesta,
-                        //adn: adnDB,
-                        notificacion: 'el adn no está mutado'
                     });
                 }
             } else {
